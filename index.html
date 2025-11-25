@@ -100,29 +100,19 @@
       color: #999;
       font-size: 0.9rem;
     }
-    .timer {
-      background: #ffebee;
-      padding: 10px;
-      border-radius: 8px;
-      text-align: center;
-      margin: 15px 0;
-      font-weight: 600;
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>🍓 Купи клубнику будущего — сейчас!</h1>
-      <p class="subtitle">Забронируй свежую клубнику по весенней цене. Только до 31 марта.</p>
+      <p class="subtitle">Забронируй свежую клубнику по весенней цене. Только до 31 декабря.</p>
     </header>
 
-    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Свежая клубника" class="hero-img">
+    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Клубника" class="hero-img">
 
     <div class="card">
       <div class="bonus">🔥 Первым 100 — скидка 15% + бесплатная доставка!</div>
-
-      <div class="timer" id="countdown">Акция закончится через: <span id="timer-text">72:00:00</span></div>
 
       <form id="futures-form">
         <div class="form-group">
@@ -212,26 +202,6 @@
       this.reset();
     });
   });
-
-    // Простой таймер обратного отсчёта (на 3 дня от текущего момента)
-    function updateTimer() {
-      const now = new Date();
-      const target = new Date(now);
-      target.setDate(now.getDate() + 3); // 3 дня
-
-      const diff = target - now;
-      if (diff > 0) {
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        document.getElementById('timer-text').textContent = 
-          `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-      } else {
-        document.getElementById('timer-text').textContent = 'Акция завершена';
-      }
-    }
-    setInterval(updateTimer, 1000);
-    updateTimer();
   </script>
 </body>
 </html>
