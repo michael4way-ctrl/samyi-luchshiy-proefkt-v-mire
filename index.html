@@ -180,7 +180,19 @@
 
   <!-- Простой обработчик формы -->
   <script>
-    document.getElementById('futures-form').addEventListener('submit', function(e) {
+    const futuresForm = document.getElementById('futures-form');
+    const ctaButton = futuresForm?.querySelector('.btn');
+
+    if (ctaButton) {
+      ctaButton.addEventListener('click', function() {
+        if (window.ym) {
+          ym(105506675, 'reachGoal', 'cta_click');
+          ym(105506675, 'params', {ctaReferrer: document.referrer || 'direct'});
+        }
+      });
+    }
+
+    futuresForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
       // Здесь можно отправить данные в Google Sheets, Airtable и т.д. через их API
