@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Клубника будущего — ВкусВилл</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      background: #fff9f8;
+      color: #2a1b13;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 40px 0 20px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      color: #d12a5c;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #5a4a42;
+      margin-bottom: 30px;
+    }
+    .hero-img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 20px 0 30px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e0d6d1;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .btn {
+      background: #d12a5c;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #b01e4a;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed #eee;
+    }
+    .bonus {
+      background: #fff0f5;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 15px 0;
+      font-weight: 600;
+      color: #d12a5c;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #999;
+      font-size: 0.9rem;
+    }
+    .timer {
+      background: #ffebee;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 15px 0;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🍓 Купи клубнику будущего — сейчас!</h1>
+      <p class="subtitle">Забронируй свежую клубнику по весенней цене. Только до 31 марта.</p>
+    </header>
+
+    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Свежая клубника" class="hero-img">
+
+    <div class="card">
+      <div class="bonus">🔥 Первым 100 — скидка 15% + бесплатная доставка!</div>
+
+      <div class="timer" id="countdown">Акция закончится через: <span id="timer-text">72:00:00</span></div>
+
+      <form id="futures-form">
+        <div class="form-group">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" required placeholder="Например, Алексей">
+        </div>
+        <div class="form-group">
+          <label for="contact">Телефон или email</label>
+          <input type="text" id="contact" required placeholder="+7 (999) 123-45-67">
+        </div>
+        <div class="form-group">
+          <label for="quantity">Сколько килограммов?</label>
+          <select id="quantity" required>
+            <option value="">Выберите</option>
+            <option value="1">1 кг</option>
+            <option value="2">2 кг</option>
+            <option value="5">5 кг</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="delivery">Когда получить?</label>
+          <select id="delivery" required>
+            <option value="">Выберите месяц</option>
+            <option value="april">Апрель 2025</option>
+            <option value="may">Май 2025</option>
+            <option value="june">Июнь 2025</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Забронировать клубнику</button>
+
+        <p class="note">
+          ⚠️ Это маркетинговый эксперимент. Мы не списываем деньги. Ваша заявка помогает нам понять, запускать ли такую услугу в реальности.
+        </p>
+      </form>
+    </div>
+
+    <footer>
+      <p>Инициатива для ВкусВилл • Не является официальным продуктом компании</p>
+    </footer>
+  </div>
+
+  <!-- Яндекс.Метрика -->
+  <script>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(99999999, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/99999999" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+  <!-- Простой обработчик формы -->
+  <script>
+    document.getElementById('futures-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Здесь можно отправить данные в Google Sheets, Airtable и т.д. через их API
+      // Пока просто показываем сообщение
+      
+      alert('Спасибо! Ваша заявка на клубничный фьючерс принята. Мы скоро с вами свяжемся!');
+      
+      // Отправка цели в Яндекс.Метрику
+      if (window.ym) {
+        ym(99999999, 'reachGoal', 'form_submit');
+      }
+      
+      this.reset();
+    });
+
+    // Простой таймер обратного отсчёта (на 3 дня от текущего момента)
+    function updateTimer() {
+      const now = new Date();
+      const target = new Date(now);
+      target.setDate(now.getDate() + 3); // 3 дня
+
+      const diff = target - now;
+      if (diff > 0) {
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        document.getElementById('timer-text').textContent = 
+          `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      } else {
+        document.getElementById('timer-text').textContent = 'Акция завершена';
+      }
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>
