@@ -180,19 +180,23 @@
 
   <!-- Простой обработчик формы -->
   <script>
-    const futuresForm = document.getElementById('futures-form');
-    const ctaButton = futuresForm?.querySelector('.btn');
+    document.addEventListener('DOMContentLoaded', function() {
+      var futuresForm = document.getElementById('futures-form');
+      if (!futuresForm) {
+        return;
+      }
 
-    if (ctaButton) {
-      ctaButton.addEventListener('click', function() {
-        if (window.ym) {
-          ym(105506675, 'reachGoal', 'cta_click');
-          ym(105506675, 'params', {ctaReferrer: document.referrer || 'direct'});
-        }
-      });
-    }
+      var ctaButton = futuresForm.querySelector('.btn');
+      if (ctaButton) {
+        ctaButton.addEventListener('click', function() {
+          if (typeof ym === 'function') {
+            ym(105506675, 'reachGoal', 'cta_click');
+            ym(105506675, 'params', { ctaReferrer: document.referrer || 'direct' });
+          }
+        });
+      }
 
-    futuresForm.addEventListener('submit', function(e) {
+      futuresForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
       // Здесь можно отправить данные в Google Sheets, Airtable и т.д. через их API
@@ -201,12 +205,13 @@
       alert('Спасибо! Ваша заявка на клубничный фьючерс принята. Мы скоро с вами свяжемся!');
       
       // Отправка цели в Яндекс.Метрику
-      if (window.ym) {
+      if (typeof ym === 'function') {
         ym(105506675, 'reachGoal', 'form_submit');
       }
       
       this.reset();
     });
+  });
 
     // Простой таймер обратного отсчёта (на 3 дня от текущего момента)
     function updateTimer() {
