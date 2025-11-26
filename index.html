@@ -66,6 +66,12 @@
       opacity: 0.6;
       pointer-events: none;
     }
+    /* 1. Добавляем анимацию для поочередного появления элементов формы */
+    .form-group {
+      margin-bottom: 16px;
+      /* Применяем уже существующую анимацию fadeInUp */
+      animation: fadeInUp 0.8s ease-out both;
+    }
     .form-group {
       margin-bottom: 16px;
     }
@@ -80,6 +86,8 @@
       border: 1px solid #e0d6d1;
       border-radius: 8px;
       font-size: 1rem;
+      /* 2. Добавляем плавный переход для подсветки при клике */
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     textarea {
       width: 100%;
@@ -87,6 +95,13 @@
       border: 1px solid #e0d6d1;
       border-radius: 8px;
       font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    /* 3. Стиль для подсветки полей при фокусе (клике) */
+    input:focus, select:focus, textarea:focus {
+      outline: none; /* Убираем стандартную обводку браузера */
+      border-color: #d12a5c; /* Подсвечиваем рамку фирменным цветом */
+      box-shadow: 0 0 0 3px rgba(209, 42, 92, 0.15); /* Добавляем мягкое свечение */
     }
     .btn {
       background: linear-gradient(120deg, #ff4b7a, #d12a5c);
@@ -174,11 +189,12 @@
           <label for="name">Ваше имя</label>
           <input type="text" id="name" name="name" required placeholder="Например, Алексей">
         </div>
-        <div class="form-group">
+        <!-- 4. Добавляем задержку анимации для каждого следующего блока -->
+        <div class="form-group" style="animation-delay: 0.1s;">
           <label for="contact">Телефон или email</label>
           <input type="text" id="contact" name="contact" required placeholder="+7 (999) 123-45-67">
         </div>
-        <div class="form-group">
+        <div class="form-group" style="animation-delay: 0.2s;">
           <label for="quantity">Сколько килограммов?</label>
           <select id="quantity" name="quantity" required>
             <option value="">Выберите</option>
@@ -188,7 +204,7 @@
             <option value="10">10 кг</option>
           </select>
         </div>
-        <div class="form-group">
+        <div class="form-group" style="animation-delay: 0.3s;">
           <label for="delivery">Когда получить?</label>
           <select id="delivery" name="delivery_month" required>
             <option value="">Выберите месяц</option>
@@ -198,12 +214,12 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="animation-delay: 0.4s;">
           <label for="price">Какая цена за 1 кг для вас приемлема (в рублях)?</label>
           <input type="number" id="price" name="acceptable_price" placeholder="Например, 800" required>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="animation-delay: 0.5s;">
             <label>Как часто вы покупаете клубнику в сезон?</label>
             <div class="radio-group">
                 <label><input type="radio" name="frequency" value="weekly" checked> Каждую неделю</label>
@@ -212,7 +228,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="animation-delay: 0.6s;">
             <label for="priority">Что для вас важнее всего в клубнике?</label>
             <select id="priority" name="priority" required>
                 <option value="">Выберите главный критерий</option>
@@ -223,12 +239,12 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="animation-delay: 0.7s;">
             <label for="improvement">Что можно улучшить в нашем предложении?</label>
             <textarea id="improvement" name="improvement_suggestion" rows="4" placeholder="Любые ваши идеи и пожелания..."></textarea>
         </div>
 
-        <button type="submit" class="btn">Забронировать и пройти опрос</button>
+        <div style="animation-delay: 0.8s;" class="form-group"><button type="submit" class="btn">Забронировать и пройти опрос</button></div>
 
         <p class="note">
           ⚠️ Это маркетинговый эксперимент. Мы не списываем деньги. Ваша заявка помогает нам понять, запускать ли такую услугу в реальности.
