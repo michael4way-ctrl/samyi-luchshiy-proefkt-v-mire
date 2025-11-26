@@ -81,6 +81,13 @@
       border-radius: 8px;
       font-size: 1rem;
     }
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e0d6d1;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
     .btn {
       background: linear-gradient(120deg, #ff4b7a, #d12a5c);
       color: white;
@@ -178,6 +185,7 @@
             <option value="1">1 кг</option>
             <option value="2">2 кг</option>
             <option value="5">5 кг</option>
+            <option value="10">10 кг</option>
           </select>
         </div>
         <div class="form-group">
@@ -188,6 +196,11 @@
             <option value="may">Май 2025</option>
             <option value="june">Июнь 2025</option>
           </select>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Какая цена за 1 кг для вас приемлема (в рублях)?</label>
+          <input type="number" id="price" name="acceptable_price" placeholder="Например, 800" required>
         </div>
 
         <div class="form-group">
@@ -208,6 +221,11 @@
                 <option value="freshness">Свежесть и внешний вид</option>
                 <option value="price">Цена</option>
             </select>
+        </div>
+
+        <div class="form-group">
+            <label for="improvement">Что можно улучшить в нашем предложении?</label>
+            <textarea id="improvement" name="improvement_suggestion" rows="4" placeholder="Любые ваши идеи и пожелания..."></textarea>
         </div>
 
         <button type="submit" class="btn">Забронировать и пройти опрос</button>
