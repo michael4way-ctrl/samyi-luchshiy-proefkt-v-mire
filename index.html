@@ -126,111 +126,6 @@
       color: #999;
       font-size: 0.9rem;
     }
-    .testimonials {
-      margin: 0 auto 35px;
-      padding: 25px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.7);
-      box-shadow: 0 18px 35px rgba(0,0,0,0.08);
-      position: relative;
-      overflow: hidden;
-      animation: fadeIn 0.9s ease-out 0.1s both;
-    }
-    .slider-track {
-      display: flex;
-      transition: transform 0.6s ease;
-    }
-    .slide {
-      min-width: 100%;
-      padding: 10px 5px;
-    }
-    .slide blockquote {
-      font-size: 1.1rem;
-      color: #4a2922;
-      margin-bottom: 12px;
-    }
-    .slide cite {
-      font-style: normal;
-      font-weight: 600;
-      color: #d12a5c;
-    }
-    .slider-controls {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 15px;
-    }
-    .slider-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(209, 42, 92, 0.12);
-      color: #d12a5c;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .slider-btn:hover {
-      background: rgba(209, 42, 92, 0.25);
-    }
-    .survey-group {
-      margin-bottom: 18px;
-    }
-    .survey-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #4c3530;
-    }
-    .checkbox-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px 20px;
-      width: 100%;
-    }
-    .radio-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px 20px;
-      width: 100%;
-    }
-    .checkbox-list label,
-    .radio-list label {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: center;
-      column-gap: 8px;
-      font-size: 1rem;
-      color: #4f3c36;
-    }
-    .checkbox-list input,
-    .radio-list input {
-      width: 16px;
-      height: 16px;
-    }
-    .checkbox-list input, .radio-list input {
-      transform: scale(1.15);
-    }
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #e0d6d1;
-      border-radius: 10px;
-      min-height: 80px;
-      font-size: 1rem;
-      resize: vertical;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px 15px 50px;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      .hero-img {
-        max-height: 260px;
-      }
-    }
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(10px);}
       to {opacity: 1; transform: translateY(0);}
@@ -262,42 +157,21 @@
 
     <img src="images/task_01kay5tna1eyttwawh1sexdq2f-1764096974_img_0.webp" alt="Клубника" class="hero-img">
 
-    <section class="testimonials">
-      <div class="slider-track" id="testimonial-track">
-        <div class="slide">
-          <blockquote>«В прошлом году брали клубнику в апреле — цена зашкаливала. Если запуск будет, точно впишусь!»</blockquote>
-          <cite>— Алена, Питер</cite>
-        </div>
-        <div class="slide">
-          <blockquote>«Готов платить заранее, если гарантия свежести и бесплатная доставка. Особенно если сообщат точные даты.»</blockquote>
-          <cite>— Андрей, Москва</cite>
-        </div>
-        <div class="slide">
-          <blockquote>«Нужна возможность докупить ягоды в течение сезона. Если так будет, готова оформить абонемент.»</blockquote>
-          <cite>— Юлия, Казань</cite>
-        </div>
-      </div>
-      <div class="slider-controls">
-        <button class="slider-btn" id="prev-slide">‹</button>
-        <button class="slider-btn" id="next-slide">›</button>
-      </div>
-    </section>
-
     <div class="card">
       <div class="bonus">🔥 Первым 100 — скидка 15% + бесплатная доставка!</div>
 
       <form id="futures-form">
         <div class="form-group">
           <label for="name">Ваше имя</label>
-          <input type="text" id="name" name="name" required placeholder="Например, Алексей">
+          <input type="text" id="name" required placeholder="Например, Алексей">
         </div>
         <div class="form-group">
           <label for="contact">Телефон или email</label>
-          <input type="text" id="contact" name="contact" required placeholder="+7 (999) 123-45-67">
+          <input type="text" id="contact" required placeholder="+7 (999) 123-45-67">
         </div>
         <div class="form-group">
           <label for="quantity">Сколько килограммов?</label>
-          <select id="quantity" name="quantity" required>
+          <select id="quantity" required>
             <option value="">Выберите</option>
             <option value="1">1 кг</option>
             <option value="2">2 кг</option>
@@ -306,7 +180,7 @@
         </div>
         <div class="form-group">
           <label for="delivery">Когда получить?</label>
-          <select id="delivery" name="delivery" required>
+          <select id="delivery" required>
             <option value="">Выберите месяц</option>
             <option value="april">Апрель 2025</option>
             <option value="may">Май 2025</option>
@@ -318,31 +192,6 @@
         <p class="note">
           ⚠️ Это маркетинговый эксперимент. Мы не списываем деньги. Ваша заявка помогает нам понять, запускать ли такую услугу в реальности.
         </p>
-
-        <div class="survey-group">
-          <p class="survey-title">Что для вас важнее всего?</p>
-          <div class="checkbox-list">
-            <label><input type="checkbox" name="priority" value="price"> Цена</label>
-            <label><input type="checkbox" name="priority" value="delivery"> Быстрая доставка</label>
-            <label><input type="checkbox" name="priority" value="quality"> Гарантия качества</label>
-            <label><input type="checkbox" name="priority" value="subscription"> Возможность подписки</label>
-          </div>
-        </div>
-
-        <div class="survey-group">
-          <p class="survey-title">Какую цену вы считаете честной за 1 кг?</p>
-          <div class="radio-list">
-            <label><input type="radio" name="price_expectation" value="399"> до 399 ₽</label>
-            <label><input type="radio" name="price_expectation" value="499"> 400–499 ₽</label>
-            <label><input type="radio" name="price_expectation" value="599"> 500–599 ₽</label>
-            <label><input type="radio" name="price_expectation" value="600+"> 600 ₽ и выше</label>
-          </div>
-        </div>
-
-        <div class="survey-group">
-          <p class="survey-title">Что нам важно знать?</p>
-          <textarea id="feedback" name="feedback" placeholder="Ваш комментарий или вопрос"></textarea>
-        </div>
       </form>
     </div>
 
@@ -367,9 +216,6 @@
 
   <!-- Простой обработчик формы -->
   <script>
-    // Замените URL ниже на свой опубликованный Google Apps Script (веб-приложение)
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby_-15S-kjZcTCDbM24cnyfP-r6PAAe07_H71G174re9ERH7DiJIwkBsIoNlrKOvTOQ/exec';
-
     document.addEventListener('DOMContentLoaded', function() {
       var futuresForm = document.getElementById('futures-form');
       if (!futuresForm) {
@@ -377,7 +223,6 @@
       }
 
       var ctaButton = futuresForm.querySelector('.btn');
-      var originalBtnText = ctaButton ? ctaButton.textContent : '';
       if (ctaButton) {
         ctaButton.addEventListener('click', function() {
           if (typeof ym === 'function') {
@@ -388,84 +233,21 @@
       }
 
       futuresForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        var formData = new FormData(futuresForm);
-        var payload = {
-          name: formData.get('name')?.toString().trim(),
-          contact: formData.get('contact')?.toString().trim(),
-          quantity: formData.get('quantity'),
-          delivery: formData.get('delivery'),
-          priority: formData.getAll('priority'),
-          price_expectation: formData.get('price_expectation'),
-          feedback: formData.get('feedback')?.toString().trim(),
-          referrer: document.referrer || window.location.href
-        };
-
-        if (ctaButton) {
-          ctaButton.disabled = true;
-          ctaButton.textContent = 'Отправляем...';
-        }
-
-        fetch(GOOGLE_SCRIPT_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        })
-        .then(function(res) {
-          if (!res.ok) {
-            return res.json().then(function(err) { throw err; });
-          }
-          return res.json();
-        })
-        .then(function() {
-          alert('Спасибо! Ваша заявка на клубничный фьючерс принята. Мы скоро с вами свяжемся!');
-
-          if (typeof ym === 'function') {
-            ym(105506675, 'reachGoal', 'form_submit');
-          }
-
-          futuresForm.reset();
-        })
-        .catch(function(err) {
-          console.error('Submission error', err);
-          alert('Не удалось отправить заявку. Попробуйте ещё раз позже.');
-        })
-        .finally(function() {
-          if (ctaButton) {
-            ctaButton.disabled = false;
-            ctaButton.textContent = originalBtnText;
-          }
-        });
-      });
-    });
-
-    // Слайдер отзывов
-    (function() {
-      const track = document.getElementById('testimonial-track');
-      if (!track) { return; }
-      const slides = Array.from(track.children);
-      const prevBtn = document.getElementById('prev-slide');
-      const nextBtn = document.getElementById('next-slide');
-      let current = 0;
-
-      function updateSlider(index) {
-        current = (index + slides.length) % slides.length;
-        track.style.transform = `translateX(-${current * 100}%)`;
+      e.preventDefault();
+      
+      // Здесь можно отправить данные в Google Sheets, Airtable и т.д. через их API
+      // Пока просто показываем сообщение
+      
+      alert('Спасибо! Ваша заявка на клубничный фьючерс принята. Мы скоро с вами свяжемся!');
+      
+      // Отправка цели в Яндекс.Метрику
+      if (typeof ym === 'function') {
+        ym(105506675, 'reachGoal', 'form_submit');
       }
-
-      prevBtn?.addEventListener('click', function() {
-        updateSlider(current - 1);
-      });
-
-      nextBtn?.addEventListener('click', function() {
-        updateSlider(current + 1);
-      });
-
-      setInterval(() => updateSlider(current + 1), 6000);
-    })();
+      
+      this.reset();
+    });
+  });
   </script>
 </body>
 </html>
