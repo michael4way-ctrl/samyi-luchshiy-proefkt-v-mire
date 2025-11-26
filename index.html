@@ -182,17 +182,34 @@
       margin-bottom: 8px;
       color: #4c3530;
     }
-    .checkbox-list, .radio-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
+    .checkbox-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px 20px;
+      width: 100%;
     }
-    .checkbox-list label, .radio-list label {
-      display: flex;
+    .radio-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px 20px;
+      width: 100%;
+    }
+    .checkbox-list label,
+    .radio-list label {
+      display: grid;
+      grid-template-columns: auto 1fr;
       align-items: center;
-      gap: 6px;
-      font-size: 0.95rem;
+      column-gap: 8px;
+      font-size: 1rem;
       color: #4f3c36;
+    }
+    .checkbox-list input,
+    .radio-list input {
+      width: 16px;
+      height: 16px;
+    }
+    .checkbox-list input, .radio-list input {
+      transform: scale(1.15);
     }
     textarea {
       width: 100%;
